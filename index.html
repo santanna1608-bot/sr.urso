@@ -63,12 +63,17 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-wrapper" id="hero">
+      <!-- Animated Cinematic Background -->
+      <div class="hero-bg-wrapper">
+        <div class="hero-bg-image"></div>
+      </div>
+
       <div class="hero-container">
         <div class="hero-text-side">
-          <span class="hero-tagline">Melhor Barbearia Premium de Nilópolis</span>
-          <h1 class="hero-title">Corte seu <span>estilo</span>,<br>revele seu <span>poder</span></h1>
-          <p class="hero-subtitle">O toque de estilo e resenha que o centro de Nilópolis precisava.</p>
-          <div class="hero-ctas">
+          <span class="hero-tagline reveal-load" style="--load-delay: 0.3s">Melhor Barbearia Premium de Nilópolis</span>
+          <h1 class="hero-title reveal-load" style="--load-delay: 0.5s">Corte seu <span>estilo</span>,<br>revele seu <span>poder</span></h1>
+          <p class="hero-subtitle reveal-load" style="--load-delay: 0.7s">O toque de estilo e resenha que o centro de Nilópolis precisava.</p>
+          <div class="hero-ctas reveal-load" style="--load-delay: 0.9s">
             <a href="https://www.trinks.com/srursobarberchopp" target="_blank" rel="noopener" class="btn btn-hero-booking" id="hero-cta-booking">
               Agendar Horário <span class="arrow" aria-hidden="true">&rarr;</span>
             </a>
@@ -83,7 +88,7 @@
       </div>
       
       <!-- Animated Scroll Down Arrow -->
-      <a href="#about" class="scroll-down" aria-label="Rolar para seção sobre">
+      <a href="#about" class="scroll-down reveal-load" style="--load-delay: 1.1s" aria-label="Rolar para seção sobre">
         <span>Sobre</span>
         <svg class="scroll-down-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"/>
@@ -103,14 +108,14 @@
 
     <!-- EXPERIENCE GRID SECTION -->
     <section class="section experience-section reveal" id="about">
-      <div class="section-title-wrapper">
+      <div class="section-title-wrapper reveal-item">
         <span class="section-subtitle">Diferencial & Estilo</span>
         <h2 class="section-title">Cortes Clássicos, Toque Moderno</h2>
       </div>
       
       <div class="experience-grid">
         <!-- Card 1 -->
-        <article class="experience-card">
+        <article class="experience-card reveal-item">
           <div class="experience-image-wrapper carousel-active">
             <div class="card-carousel">
               <img src="Imagens/corte-classico.png" alt="Corte Clássico Masculino" class="carousel-slide active">
@@ -138,7 +143,7 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="experience-card">
+        <article class="experience-card reveal-item">
           <div class="experience-image-wrapper carousel-active">
             <div class="card-carousel">
               <img src="Imagens/barba-navalha.png" alt="Barba Alinhada na Navalha" class="carousel-slide active">
@@ -166,7 +171,7 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="experience-card">
+        <article class="experience-card reveal-item">
           <div class="experience-image-wrapper carousel-active">
             <div class="card-carousel">
               <img src="Imagens/atendimento-premium.png" alt="Atendimento Premium Personalizado" class="carousel-slide active">
@@ -194,7 +199,7 @@
         </article>
 
         <!-- Card 4 -->
-        <article class="experience-card">
+        <article class="experience-card reveal-item">
           <div class="experience-image-wrapper carousel-active">
             <div class="card-carousel">
               <img src="Imagens/combo-corte-chopp.png" alt="Cabelo + Barba + 1 Chopp Cortesia" class="carousel-slide active">
@@ -225,14 +230,14 @@
 
     <!-- SERVICES GRID SECTION -->
     <section class="section services-section reveal" id="services">
-      <div class="section-title-wrapper">
+      <div class="section-title-wrapper reveal-item">
         <span class="section-subtitle">Tabela de Preços</span>
         <h2 class="section-title">Nossos Serviços</h2>
       </div>
 
       <div class="services-grid">
         <!-- Categoria 1: Cortes de Cabelo -->
-        <div class="service-category-card">
+        <div class="service-category-card reveal-item">
           <div class="category-header">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="category-icon">
               <circle cx="6" cy="6" r="3"/>
@@ -272,7 +277,7 @@
         </div>
 
         <!-- Categoria 2: Cuidados de Barba -->
-        <div class="service-category-card">
+        <div class="service-category-card reveal-item">
           <div class="category-header">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="category-icon">
               <rect x="3" y="6" width="18" height="12" rx="2" ry="2"/>
@@ -312,7 +317,7 @@
         </div>
 
         <!-- Categoria 3: Combos do Urso -->
-        <div class="service-category-card">
+        <div class="service-category-card reveal-item">
           <div class="category-header">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="category-icon">
               <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
@@ -349,7 +354,7 @@
         </div>
 
         <!-- Categoria 4: Bebidas & Extras -->
-        <div class="service-category-card">
+        <div class="service-category-card reveal-item">
           <div class="category-header">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="category-icon">
               <rect x="5" y="6" width="12" height="14" rx="2"/>
@@ -390,14 +395,14 @@
 
     <!-- TESTIMONIALS SECTION -->
     <section class="section testimonials-section reveal" id="testimonials">
-      <div class="section-title-wrapper">
+      <div class="section-title-wrapper reveal-item">
         <span class="section-subtitle">Opinião de quem frequenta</span>
         <h2 class="section-title">Avaliações no Google</h2>
       </div>
 
       <div class="reviews-grid">
         <!-- Review 1 -->
-        <article class="review-card" id="review-1">
+        <article class="review-card reveal-item" id="review-1">
           <div>
             <div class="review-rating" aria-label="Avaliação 5 de 5 estrelas">
               <svg class="review-star" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -418,7 +423,7 @@
         </article>
 
         <!-- Review 2 -->
-        <article class="review-card" id="review-2">
+        <article class="review-card reveal-item" id="review-2">
           <div>
             <div class="review-rating" aria-label="Avaliação 5 de 5 estrelas">
               <svg class="review-star" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -439,7 +444,7 @@
         </article>
 
         <!-- Review 3 -->
-        <article class="review-card" id="review-3">
+        <article class="review-card reveal-item" id="review-3">
           <div>
             <div class="review-rating" aria-label="Avaliação 5 de 5 estrelas">
               <svg class="review-star" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -460,7 +465,7 @@
         </article>
 
         <!-- Review 4 -->
-        <article class="review-card" id="review-4">
+        <article class="review-card reveal-item" id="review-4">
           <div>
             <div class="review-rating" aria-label="Avaliação 5 de 5 estrelas">
               <svg class="review-star" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
@@ -484,28 +489,28 @@
 
     <!-- FREQUENTLY ASKED QUESTIONS SECTION -->
     <section class="section faq-section reveal" id="faq">
-      <div class="section-title-wrapper">
+      <div class="section-title-wrapper reveal-item">
         <span class="section-subtitle">Dúvidas Frequentes</span>
         <h2 class="section-title">FAQ</h2>
       </div>
 
       <div class="faq-grid">
-        <div class="faq-card">
+        <div class="faq-card reveal-item">
           <h4 class="faq-question">Preciso agendar horário?</h4>
           <p class="faq-answer">Recomendamos fazer o agendamento online pelo celular para garantir o seu horário e evitar filas. No entanto, também atendemos clientes por ordem de chegada, dependendo da disponibilidade dos barbeiros.</p>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card reveal-item">
           <h4 class="faq-question">Quais as formas de pagamento aceitas?</h4>
           <p class="faq-answer">Aceitamos pagamentos via Pix, cartões de crédito e débito das principais bandeiras, além de pagamentos por aproximação (NFC) via celular ou smartwatches.</p>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card reveal-item">
           <h4 class="faq-question">O espaço é adequado para crianças?</h4>
           <p class="faq-answer">Sim! Temos um Espaço Kids preparado e profissionais muito pacientes e acostumados a realizar cortes infantis, tornando a experiência divertida e tranquila para os pequenos.</p>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card reveal-item">
           <h4 class="faq-question">A barbearia possui acessibilidade?</h4>
           <p class="faq-answer">Sim, nossa barbearia foi planejada com acessibilidade total. Contamos com entrada acessível por rampa e espaço de circulação adequado para cadeirantes.</p>
         </div>
@@ -515,7 +520,7 @@
     <!-- CONTACT & PRE-BOOKING FORM SECTION -->
     <section class="section booking-section reveal" id="contact">
       <div class="booking-grid">
-        <div class="booking-text-side">
+        <div class="booking-text-side reveal-item">
           <span class="section-subtitle">Fale Conosco</span>
           <h3>Estilo, Resenha e <span>Atendimento Premium</span></h3>
           <p>
@@ -531,7 +536,7 @@
           </div>
         </div>
 
-        <div class="booking-form-box">
+        <div class="booking-form-box reveal-item">
           <form id="contact-form">
             <div class="form-row">
               <div class="form-group">

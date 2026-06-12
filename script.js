@@ -83,28 +83,39 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateStoreStatus, 60000);
 
   // --- Viewport Intersection Observer (Scroll Reveal) ---
-  const revealElements = document.querySelectorAll('.reveal');
+  const revealContainers = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('active');
+          const container = entry.target;
+          container.classList.add('active');
+          
+          // Stagger children with .reveal-item
+          const items = container.querySelectorAll('.reveal-item');
+          items.forEach((item, index) => {
+            item.style.setProperty('--delay-index', index);
+            requestAnimationFrame(() => {
+              item.classList.add('active');
+            });
+          });
+          
           // Unobserve once revealed to keep layout performant
-          observer.unobserve(entry.target);
+          observer.unobserve(container);
         }
       });
     }, {
-      threshold: 0.1, // Element is 10% visible
-      rootMargin: '0px 0px -50px 0px' // Offset triggers slightly before they come in view
+      threshold: 0.05, // Lower threshold to trigger slightly earlier
+      rootMargin: '0px 0px -60px 0px' // Trigger slightly before coming into view
     });
 
-    revealElements.forEach(element => {
-      revealObserver.observe(element);
+    revealContainers.forEach(container => {
+      revealObserver.observe(container);
     });
   } else {
     // Fallback for older browsers
-    revealElements.forEach(element => {
+    document.querySelectorAll('.reveal, .reveal-item').forEach(element => {
       element.classList.add('active');
     });
   }
