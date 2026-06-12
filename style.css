@@ -301,48 +301,29 @@ a {
 }
 
 .nav-btn {
-  background: transparent;
+  background: var(--color-bg-card);
   color: var(--color-accent);
   font-family: var(--font-primary);
   font-weight: 600;
   padding: 8px 20px;
   border-radius: var(--border-radius);
   font-size: 0.9rem;
-  border: 1px solid var(--color-accent);
-  transition: transform 0.4s var(--ease-out-quart), color 0.4s var(--ease-out-quart), border-color 0.4s var(--ease-out-quart), box-shadow 0.4s var(--ease-out-quart);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.nav-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.5s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.nav-btn:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
+  border: 1.5px solid rgba(var(--color-accent-rgb), 0.4);
+  transition: all 0.4s var(--ease-out-quart);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-btn:hover {
-  color: var(--color-bg-deep);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold);
+  color: var(--color-accent);
+  background: var(--color-bg-card-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--color-accent-rgb), 0.25), 0 0 10px rgba(var(--color-accent-rgb), 0.1);
 }
 
 .nav-btn:active {
   transform: scale(0.95) translateY(0);
-  transition: transform 0.1s var(--ease-elastic-out);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile Menu Button */
@@ -492,9 +473,9 @@ a {
 }
 
 .btn-hero-booking {
-  background: transparent;
+  background: rgba(229, 183, 61, 0.05);
   color: #ffffff;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid rgba(var(--color-accent-rgb), 0.5);
   padding: 16px 32px;
   border-radius: var(--border-radius);
   font-family: var(--font-primary);
@@ -505,37 +486,17 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  transition: transform 0.4s var(--ease-out-quart), color 0.4s var(--ease-out-quart), border-color 0.4s var(--ease-out-quart), box-shadow 0.4s var(--ease-out-quart);
+  transition: all 0.4s var(--ease-out-quart);
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn-hero-booking::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.6s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.btn-hero-booking:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-hero-booking:hover {
   border-color: var(--color-accent);
-  color: var(--color-bg-deep);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  color: var(--color-accent);
+  background: rgba(229, 183, 61, 0.15);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(var(--color-accent-rgb), 0.35), 0 0 15px rgba(var(--color-accent-rgb), 0.1);
 }
 
 .btn-hero-booking .arrow {
@@ -548,14 +509,14 @@ a {
 }
 
 .btn-hero-booking:active {
-  transform: scale(0.95) translateY(0);
-  transition: transform 0.1s var(--ease-elastic-out);
+  transform: scale(0.96) translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 .btn-hero-whatsapp {
-  background: transparent;
+  background: rgba(37, 211, 102, 0.05);
   color: var(--color-text-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(37, 211, 102, 0.4);
   padding: 16px 28px;
   border-radius: var(--border-radius);
   font-family: var(--font-primary);
@@ -564,42 +525,21 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: transform 0.4s var(--ease-out-quart), color 0.4s var(--ease-out-quart), border-color 0.4s var(--ease-out-quart), box-shadow 0.4s var(--ease-out-quart);
+  transition: all 0.4s var(--ease-out-quart);
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-hero-whatsapp svg {
-  position: relative;
-  z-index: 2;
   transition: transform 0.4s var(--ease-out-quart);
-}
-
-.btn-hero-whatsapp::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-whatsapp);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.6s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.btn-hero-whatsapp:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
 }
 
 .btn-hero-whatsapp:hover {
   border-color: var(--color-whatsapp);
-  color: #ffffff;
-  transform: translateY(-2px);
+  color: var(--color-whatsapp);
+  background: rgba(37, 211, 102, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25), 0 0 15px rgba(37, 211, 102, 0.1);
 }
 
 .btn-hero-whatsapp:hover svg {
@@ -607,8 +547,8 @@ a {
 }
 
 .btn-hero-whatsapp:active {
-  transform: scale(0.95) translateY(0);
-  transition: transform 0.1s var(--ease-elastic-out);
+  transform: scale(0.96) translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 .btn {
@@ -622,81 +562,48 @@ a {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.4s var(--ease-out-quart), color 0.4s var(--ease-out-quart), border-color 0.4s var(--ease-out-quart), box-shadow 0.4s var(--ease-out-quart);
-  box-shadow: var(--shadow-sm);
+  transition: all 0.4s var(--ease-out-quart);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
 }
 
 .btn:active {
-  transform: scale(0.95) translateY(0);
-  transition: transform 0.1s var(--ease-elastic-out);
+  transform: scale(0.96) translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 .btn-primary {
-  background: var(--color-accent);
-  color: var(--color-bg-deep);
-  border: 1px solid var(--color-accent);
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-cream);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.6s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.btn-primary:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
+  background: rgba(229, 183, 61, 0.08);
+  color: var(--color-accent);
+  border: 1.5px solid rgba(var(--color-accent-rgb), 0.5);
 }
 
 .btn-primary:hover {
-  color: var(--color-bg-deep);
-  border-color: var(--color-cream);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  background: rgba(229, 183, 61, 0.18);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(var(--color-accent-rgb), 0.35), 0 0 15px rgba(var(--color-accent-rgb), 0.15);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn-secondary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-whatsapp);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.6s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.btn-secondary:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
+  background: rgba(37, 211, 102, 0.08);
+  color: var(--color-whatsapp);
+  border: 1.5px solid rgba(37, 211, 102, 0.5);
 }
 
 .btn-secondary:hover {
+  background: rgba(37, 211, 102, 0.18);
   border-color: var(--color-whatsapp);
-  color: #ffffff;
-  transform: translateY(-3px);
+  color: var(--color-whatsapp);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.3), 0 0 15px rgba(37, 211, 102, 0.15);
 }
+
+.btn-full-width {
+  width: 100%;
+}
+
 
 /* Scroll Down Indicator */
 .scroll-down {
@@ -947,8 +854,9 @@ a {
 .btn-outline-gold {
   display: block;
   text-align: center;
-  border: 1px solid var(--color-accent);
+  border: 1.5px solid rgba(var(--color-accent-rgb), 0.5);
   color: var(--color-accent);
+  background: rgba(229, 183, 61, 0.05);
   padding: 11px 20px;
   border-radius: 30px;
   font-family: var(--font-primary);
@@ -956,41 +864,22 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  transition: transform 0.4s var(--ease-out-quart), color 0.4s var(--ease-out-quart), border-color 0.4s var(--ease-out-quart), box-shadow 0.4s var(--ease-out-quart);
+  transition: all 0.4s var(--ease-out-quart);
   margin-top: auto;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn-outline-gold::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.6s var(--ease-out-expo);
-  z-index: -1;
-}
-
-.btn-outline-gold:hover::before {
-  transform: scaleX(1);
-  transform-origin: left center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline-gold:hover {
-  color: var(--color-bg-deep);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  color: var(--color-accent);
+  background: rgba(229, 183, 61, 0.15);
+  border-color: var(--color-accent);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(var(--color-accent-rgb), 0.35), 0 0 10px rgba(var(--color-accent-rgb), 0.15);
 }
 
 .btn-outline-gold:active {
-  transform: scale(0.95) translateY(0);
-  transition: transform 0.1s var(--ease-elastic-out);
+  transform: scale(0.96) translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* --- Services Grid Section --- */
@@ -1918,11 +1807,6 @@ a {
   .carousel-slide.active {
     animation: none !important;
   }
-  .btn-primary::before,
-  .btn-outline-gold::before,
-  .btn-hero-booking::before,
-  .btn-hero-whatsapp::before,
-  .nav-btn::before,
   .social-btn::before {
     display: none !important;
   }
