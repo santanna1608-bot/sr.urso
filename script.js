@@ -197,4 +197,51 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   initCardCarousels();
+
+  // --- Custom Cursor & Trailing Follow (Desktop Only) ---
+  const cursor = document.getElementById('custom-cursor');
+  if (cursor && window.innerWidth > 992) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+    
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    const animateCursor = () => {
+      // Linear Interpolation (lerp) for smooth trailing delay
+      const lerpFactor = 0.15;
+      cursorX += (mouseX - cursorX) * lerpFactor;
+      cursorY += (mouseY - cursorY) * lerpFactor;
+      
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+      
+      requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
+    
+    // Add hover states to interactives
+    const addCursorHoverListeners = () => {
+      const clickables = document.querySelectorAll('a, button, select, input, textarea, .burger-menu, .dot, .review-card, .faq-card, .service-category-card, .logo-link');
+      clickables.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+    };
+    addCursorHoverListeners();
+  }
+
+  // --- Hero Parallax Scroll Effect (Desktop Only) ---
+  const heroBgImage = document.querySelector('.hero-bg-image');
+  if (heroBgImage && window.innerWidth > 992) {
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      // translate3d to avoid triggering reflow layouts (keeps rendering on GPU at 60fps+)
+      heroBgImage.style.transform = `scale(1) translate3d(0, ${scrollPos * 0.3}px, 0)`;
+    });
+  }
 });

@@ -65,6 +65,69 @@ body {
   overflow-x: hidden;
 }
 
+/* --- Interactive Premium Custom Cursor (Desktop Only) --- */
+@media (min-width: 993px) {
+  body {
+    cursor: none; /* Hide standard cursor */
+  }
+  a, button, select, input, textarea, .burger-menu, .dot, .logo-link {
+    cursor: none !important; /* Force hide standard cursor on interactives */
+  }
+  
+  .custom-cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 0.2s var(--ease-out-quart), height 0.2s var(--ease-out-quart), background-color 0.2s var(--ease-out-quart);
+    will-change: left, top, transform;
+  }
+  
+  /* Trailing Outer Ring */
+  .custom-cursor::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgba(var(--color-accent-rgb), 0.5);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 0.3s var(--ease-out-quart), height 0.3s var(--ease-out-quart), border-color 0.3s var(--ease-out-quart), background-color 0.3s var(--ease-out-quart);
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(var(--color-accent-rgb), 0.1);
+  }
+  
+  /* Hover Morphed State */
+  .custom-cursor.hover {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+  }
+  
+  .custom-cursor.hover::after {
+    width: 48px;
+    height: 48px;
+    border-color: var(--color-accent);
+    background-color: rgba(var(--color-accent-rgb), 0.08);
+    box-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.25);
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -133,11 +196,16 @@ a {
 .section-title::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 0;
   height: 2px;
   background: var(--color-accent);
   margin: 15px auto 0 auto;
   border-radius: 2px;
+  transition: width 1s var(--ease-out-quart);
+}
+
+.section-title-wrapper.active .section-title::after {
+  width: 60px;
 }
 
 /* --- Header & Navigation --- */
@@ -753,9 +821,9 @@ a {
 }
 
 .experience-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(var(--color-accent-rgb), 0.3);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px) scale(1.01);
+  border-color: rgba(var(--color-accent-rgb), 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(var(--color-accent-rgb), 0.15);
 }
 
 .experience-image-wrapper {
@@ -965,9 +1033,9 @@ a {
 }
 
 .service-category-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(var(--color-accent-rgb), 0.3);
-  box-shadow: var(--shadow-gold), var(--shadow-lg);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(var(--color-accent-rgb), 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(var(--color-accent-rgb), 0.15);
 }
 
 .service-category-card:hover::before {
