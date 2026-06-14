@@ -228,8 +228,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const addCursorHoverListeners = () => {
       const clickables = document.querySelectorAll('a, button, select, input, textarea, .burger-menu, .dot, .review-card, .faq-card, .service-category-card, .logo-link, .floating-badge');
       clickables.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('hover');
+          if (el.classList.contains('btn') || el.classList.contains('nav-btn') || el.classList.contains('btn-outline-gold')) {
+            cursor.classList.add('on-button');
+          }
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('hover');
+          cursor.classList.remove('on-button');
+        });
       });
     };
     addCursorHoverListeners();

@@ -120,6 +120,22 @@ body {
     background-color: rgba(var(--color-accent-rgb), 0.08);
     box-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.25);
   }
+  
+  /* Prevent overlapping ring visual clutter on large CTA buttons */
+  .custom-cursor.hover.on-button {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(var(--color-accent-rgb), 0.6);
+  }
+  
+  .custom-cursor.on-button::after {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.4);
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -266,7 +282,7 @@ a {
   align-items: center;
 }
 
-.nav-item a {
+.nav-item a:not(.nav-btn) {
   font-family: var(--font-primary);
   font-weight: 500;
   font-size: 0.95rem;
@@ -276,11 +292,11 @@ a {
   padding: 5px 0;
 }
 
-.nav-item a:hover {
+.nav-item a:not(.nav-btn):hover {
   color: var(--color-text-primary);
 }
 
-.nav-item a::after {
+.nav-item a:not(.nav-btn)::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -291,7 +307,7 @@ a {
   transition: var(--transition-smooth);
 }
 
-.nav-item a:hover::after {
+.nav-item a:not(.nav-btn):hover::after {
   width: 100%;
 }
 
@@ -301,6 +317,9 @@ a {
 }
 
 .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--color-bg-card);
   color: var(--color-accent);
   font-family: var(--font-primary);
@@ -1549,6 +1568,7 @@ a {
 .btn, .nav-btn, .btn-outline-gold {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .btn::after, .nav-btn::after, .btn-outline-gold::after {
