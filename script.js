@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add hover states to interactives
     const addCursorHoverListeners = () => {
-      const clickables = document.querySelectorAll('a, button, select, input, textarea, .burger-menu, .dot, .review-card, .faq-card, .service-category-card, .logo-link');
+      const clickables = document.querySelectorAll('a, button, select, input, textarea, .burger-menu, .dot, .review-card, .faq-card, .service-category-card, .logo-link, .floating-badge');
       clickables.forEach(el => {
         el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
